@@ -2,7 +2,7 @@
 
 *23 lines of code, 3 libery, easy to use*
 
-![koi](https://raw.githubusercontent.com/IwnuplyNotTyan/koi/main/image/Showcase.png?token=GHSAT0AAAAAACK64IIXB7QSHXVN5LMWFGYUZSKKALA)
+![koi](https://github.com/IwnuplyNotTyan/koi/blob/main/image/Showcase.png)
 
 ``` bash
 koi <example.md>

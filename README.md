@@ -11,6 +11,7 @@ koi <example.md>
 ## Build from source
 
 ``` bash
+go mod tidy
 go build -o koi main.go
 ```
 

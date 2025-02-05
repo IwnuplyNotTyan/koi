@@ -26,3 +26,5 @@ go build -o koi main.go
 
 ## Custom Libery
 [Glamour](https://github.com/charmbracelet/glamour)
+
+[Logs](https://github.com/charmbracelet/log)

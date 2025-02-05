@@ -1,6 +1,6 @@
 # Simple. Fast. Beautiful. - Koi
 
-![koi](https://github.com/IwnuplyNotTyan/koi/blob/main/image/Showcase.png)
+![koi](http://gachi.gay/0n7Yo)
 
 ``` bash
 koi <example.md>

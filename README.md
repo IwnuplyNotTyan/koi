@@ -11,13 +11,18 @@ koi <example.md>
 export THEME=dark
 ```
 *All default theme: dark, light, notty or dracula*
-## Build from source
+# Install
 
+## Arch, buildopkg
+``` bash
+makepkg -si
+```
+
+## Build from source
 ``` bash
 go mod tidy
 go build -o koi main.go
 ```
-
 
 ## Custom Libery
 [Glamour](https://github.com/charmbracelet/glamour)

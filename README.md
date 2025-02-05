@@ -13,7 +13,7 @@ export THEME=dark
 *All default theme: dark, light, notty or dracula*
 # Install
 
-## Arch, buildopkg
+## Arch, buildpkg
 ``` bash
 makepkg -si
 ```

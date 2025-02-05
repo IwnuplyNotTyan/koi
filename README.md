@@ -1,7 +1,5 @@
 # Simple. Fast. Beautiful. - Koi
 
-*24 lines of code, 3 libery, easy to use*
-
 ![koi](https://github.com/IwnuplyNotTyan/koi/blob/main/image/Showcase.png)
 
 ``` bash
@@ -12,7 +10,7 @@ koi <example.md>
 ```bash
 export THEME=dark
 ```
-Must set to dark, light, notty or dracula
+*All default theme: dark, light, notty or dracula*
 ## Build from source
 
 ``` bash

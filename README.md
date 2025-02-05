@@ -6,7 +6,7 @@
 koi <example.md>
 ```
 
-## Setting
+# Setting
 ```bash
 export THEME=dark
 ```

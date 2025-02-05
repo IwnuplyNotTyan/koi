@@ -5,9 +5,11 @@ import (
 	"os"
 
 	"github.com/charmbracelet/glamour"
+	"github.com/charmbracelet/log"
 )
 
 func main() {
+	logger := log.New(os.Stderr)
 	theme := os.Getenv("THEME")
 	if theme == "" {
 		theme = "dark"
@@ -18,12 +20,12 @@ func main() {
 	filename := os.Args[1]
 	content, err := os.ReadFile(filename)
 	if err != nil {
-		fmt.Println("read file error")
+		logger.Error("~ Read file error")
 		return
 	}
 	render, err := glamour.Render(string(content), theme)
 	if err != nil {
-		fmt.Println("render error")
+		logger.Error("~ Render error")
 		return
 	}
 	fmt.Print(render)

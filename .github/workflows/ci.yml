@@ -65,7 +65,7 @@ jobs:
           GOOS: linux
           GOARCH: amd64
           CGO_ENABLED: 0
-        run: go build -ldflags="-s -w -X main.version=dev -X main.commit=$(git rev-parse HEAD)" -v -o ./bin/koi ./cmd/koi/main.go
+        run: go build -ldflags="-s -w -X main.version=dev -X main.commit=$(git rev-parse HEAD)" -v -o ./bin/koi ./main.go
 
       - name: Upload binary
         uses: actions/upload-artifact@v7

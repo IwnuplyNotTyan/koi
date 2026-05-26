@@ -1,19 +1,8 @@
-name: nixHash
-
-on:
-  push:
-    paths:
-      - 'go.mod'
-      - 'go.sum'
-      - 'gomod2nix.toml'
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
+steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
@@ -26,7 +15,14 @@ jobs:
           CORRECT=$(nix build .# 2>&1 | grep "got:" | awk '{print $2}')
           echo "Correct hash: $CORRECT"
           
-          sed -i "s|vendorHash = .*|vendorHash = \"$CORRECT\";|" flake.nix
+          if [ -n "$CORRECT" ]; then
+            sed -i "s|vendorHash = .*|vendorHash = \"$CORRECT\";|" flake.nix
+          else
+            echo "No vendorHash mismatch found or build failed."
+          fi
+
+      - name: Pull latest changes
+        run: git pull origin ${{ github.ref_name }} --rebase
 
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:

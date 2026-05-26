@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
 	"os"
 
 	"charm.land/fang/v2"
@@ -21,19 +22,33 @@ func main() {
 		Use:     "koi [file]",
 		Short:   "Koi - Simple .md reader",
 		Long:    "Simple .md reader. Made with ♡",
-		Example: `koi LICENSE`,
+		Example: "koi LICENSE\necho '# Hello' | koi",
 		Args:    cobra.MinimumNArgs(0),
 		Run: func(cmd *cobra.Command, args []string) {
+			var content []byte
+			var err error
+
+			stat, _ := os.Stdin.Stat()
+			isPipe := (stat.Mode() & os.ModeCharDevice) == 0
+
 			if len(args) == 0 {
-				_ = cmd.Help()
-				return
+				if isPipe {
+					content, err = io.ReadAll(os.Stdin)
+				} else {
+					_ = cmd.Help()
+					return
+				}
+			} else {
+				filename := args[0]
+				if filename == "-" {
+					content, err = io.ReadAll(os.Stdin)
+				} else {
+					content, err = os.ReadFile(filename)
+				}
 			}
 
-			filename := args[0]
-			
-			content, err := os.ReadFile(filename)
 			if err != nil {
-				logger.Error("~ Read file error", "err", err)
+				logger.Error("~ Read error", "err", err)
 				return
 			}
 

@@ -1,0 +1,31 @@
+name: nixHash
+
+on:
+  push:
+    paths:
+      - 'go.mod'
+      - 'go.sum'
+      - 'gomod2nix.toml'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Update gomod2nix.toml
+        run: nix run github:nix-community/gomod2nix -- generate
+
+      - name: Get correct vendorHash
+        run: |
+          CORRECT=$(nix build .# 2>&1 | grep "got:" | awk '{print $2}')
+          echo "Correct hash: $CORRECT"
+          
+          sed -i "s|vendorHash = .*|vendorHash = \"$CORRECT\";|" flake.nix
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update vendorHash"

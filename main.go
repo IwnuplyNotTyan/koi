@@ -52,7 +52,7 @@ func main() {
 				return
 			}
 
-			theme := os.Getenv("THEME")
+			theme := os.Getenv("KOI_DEFAULT_THEME")
 			if theme == "" {
 				theme = "dark"
 			}

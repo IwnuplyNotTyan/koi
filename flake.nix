@@ -27,7 +27,7 @@
             src = self;
 	    modules = ./gomod2nix.toml;
 
-            vendorHash = "sha256-eNBgdxOd0vpcbam0iYXDmBZKFsFNqmJbXhP3qX4yPWk=";
+            vendorHash = "sha256-eq8wtckFoXpwubNpD/RtkylC0Uyg8j40MeOlJELFOs8=";
 
             meta = {
               description = "Basic .md file reader";

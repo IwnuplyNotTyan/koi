@@ -34,6 +34,42 @@ export KOI_DEFAULT_THEME=dark
 nix run github:iwnuplynottyan/koi
 ```
 
+<details>
+<summary><b>Home Manager</b></summary>
+
+**flake.nix**
+```nix
+{
+  inputs = {
+    koi.url = "github:IwnuplyNotTyan/koi";
+    # ...rest of inputs
+  };
+
+  outputs = { koi, home-manager, nixpkgs, ... } @ inputs: {
+    homeConfigurations."user@hostname" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = { inherit inputs; };
+      modules = [
+        koi.homeManagerModules.default
+        ./home.nix
+      ];
+    };
+  };
+}
+```
+
+**home.nix**
+```nix
+{
+  programs.koi = {
+    enable = true;
+    theme = "dracula"; # dark | light | notty | dracula
+  };
+}
+```
+
+</details>
+
 ## 💋 Arch
 ``` bash
 makepkg -si

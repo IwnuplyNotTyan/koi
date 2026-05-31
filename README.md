@@ -12,7 +12,15 @@
   <img src="https://img.shields.io/github/last-commit/IwnuplyNotTyan/koi" alt="Last Commit"/>
 </p>
 
-![Screenshot](https://github.com/IwnuplyNotTyan/Koi/blob/main/.github/assets/screenshot.png?raw=true)
+<p align="center">
+  <img src="https://github.com/IwnuplyNotTyan/Koi/blob/main/.github/assets/logo.png?raw=true" alt="Logo" width="150">
+</p>
+
+---
+
+<p align="center">
+  <img src="https://github.com/IwnuplyNotTyan/Koi/blob/main/.github/assets/screenshot.png?raw=true" alt="Screenshot">
+</p>
 
 ``` bash
 koi <example.md>

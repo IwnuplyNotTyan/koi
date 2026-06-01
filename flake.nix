@@ -19,13 +19,22 @@
       packages = forAllSystems (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+	  version = "0.2.0";
+	  commit = self.rev or "dirty";
         in
         {
           default = pkgs.buildGoModule {
             pname = "koi";
-            version = "0.2.0";
+	    inherit version;
             src = self;
             modules = ./gomod2nix.toml;
+
+	    ldflags = [
+              "-X main.version=${version}"
+              "-X main.commit=${commit}"
+	      "-s"
+	      "-w"
+            ];
 
             vendorHash = "sha256-eq8wtckFoXpwubNpD/RtkylC0Uyg8j40MeOlJELFOs8=";
 

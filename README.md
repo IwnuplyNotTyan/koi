@@ -31,7 +31,7 @@ echo "*Markdown suck*" | koi
 ```bash
 export KOI_DEFAULT_THEME=dark
 ```
-*All default theme: dark, light, notty or dracula*
+*All default theme: dark, light, notty, pink, tokyo-night or dracula*
 
 ---
 
@@ -71,7 +71,7 @@ nix run github:iwnuplynottyan/koi
 {
   programs.koi = {
     enable = true;
-    theme = "dracula"; # dark | light | notty | dracula
+    theme = "dracula"; # dark | light | notty | dracula | pink | tokyo-night
   };
 }
 ```

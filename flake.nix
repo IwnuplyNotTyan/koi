@@ -55,11 +55,11 @@
             enable = lib.mkEnableOption "koi markdown reader";
 
             theme = lib.mkOption {
-              type = lib.types.enum [ "dark" "light" "notty" "dracula" ];
+              type = lib.types.enum [ "dark" "light" "notty" "dracula" "pink" "tokyo-night" ];
               default = "dark";
               description = ''
                 Default theme for koi. Sets the KOI_DEFAULT_THEME environment variable.
-                Possible values: dark, light, notty, dracula.
+                Possible values: dark, light, notty, dracula, pink, tokyo-night.
               '';
             };
           };

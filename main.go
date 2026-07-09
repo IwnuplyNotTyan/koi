@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"charm.land/fang/v2"
-	"github.com/charmbracelet/glamour"
+	"charm.land/glamour/v2"
 	"github.com/charmbracelet/log"
 	"github.com/spf13/cobra"
 )

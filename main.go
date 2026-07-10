@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"charm.land/fang/v2"
-	"charm.land/glamour/v2"
+	glamour "github.com/iwnuplynottyan/glamoured"
 	"github.com/charmbracelet/log"
 	"github.com/spf13/cobra"
 )
@@ -57,7 +57,15 @@ func main() {
 				theme = "dark"
 			}
 
-			render, err := glamour.Render(string(content), theme)
+			r, _ := glamour.NewTermRenderer(
+			    glamour.WithStandardStyle(theme),
+			    glamour.WithMosaic(true),
+			    glamour.WithMosaicWidth(100),
+			    glamour.WithMaxImageHeight(500),
+			    glamour.WithNerdFontIcons(),
+			)
+
+			render, err := r.Render(string(content))
 			if err != nil {
 				logger.Error("~ Render error", "err", err)
 				return

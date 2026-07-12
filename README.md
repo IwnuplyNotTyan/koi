@@ -92,7 +92,7 @@ go build -o koi main.go
 ---
 
 ## 📚 Libraries Used
-- [Glamour](https://github.com/charmbracelet/glamour) — Markdown render
+- [Glamoured](https://github.com/iwnuplynottyan/glamoured) — Markdown render, fork of [Glamour](https://github.com/charmbracelet/glamour) 
 - [Logs](https://github.com/charmbracelet/log) — Pretty logs
 - [Cobra](https://github.com/spf13/cobra) — Powerfull flags
     - [Fang](https://github.com/charmbracelet/fang) —  Make it pretty

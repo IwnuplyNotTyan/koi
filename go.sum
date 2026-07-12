@@ -65,6 +65,10 @@ github.com/iwnuplynottyan/glamoured v0.0.0-20260710093843-a6d1cf661053 h1:BhGqYI
 github.com/iwnuplynottyan/glamoured v0.0.0-20260710093843-a6d1cf661053/go.mod h1:S5qw1e1FdkTBj6b8v055czWBW77ToznZ0zTf8RtY4aQ=
 github.com/iwnuplynottyan/glamoured v0.0.0-20260710102012-1c95809495a0 h1:8nkVGf74zG2NocUMdz4wFxnycU9uKLEkrB8Aqn1WRCM=
 github.com/iwnuplynottyan/glamoured v0.0.0-20260710102012-1c95809495a0/go.mod h1:S5qw1e1FdkTBj6b8v055czWBW77ToznZ0zTf8RtY4aQ=
+github.com/iwnuplynottyan/glamoured v0.0.0-20260712180629-1a540da933de h1:hhlTK/BBxr4B6+oATfTZsq//aLHeiPBs0Cg7c+nW+/c=
+github.com/iwnuplynottyan/glamoured v0.0.0-20260712180629-1a540da933de/go.mod h1:S5qw1e1FdkTBj6b8v055czWBW77ToznZ0zTf8RtY4aQ=
+github.com/iwnuplynottyan/glamoured v0.0.0-20260712194843-9dbb975cfbe1 h1:N3uNxCGsZsx3TzEasshDEr/ASSXDuraqOgNZ195zoOw=
+github.com/iwnuplynottyan/glamoured v0.0.0-20260712194843-9dbb975cfbe1/go.mod h1:S5qw1e1FdkTBj6b8v055czWBW77ToznZ0zTf8RtY4aQ=
 github.com/lucasb-eyer/go-colorful v1.4.0 h1:UtrWVfLdarDgc44HcS7pYloGHJUjHV/4FwW4TvVgFr4=
 github.com/lucasb-eyer/go-colorful v1.4.0/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
 github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=

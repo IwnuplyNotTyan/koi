@@ -56,14 +56,32 @@ func main() {
 			if theme == "" {
 				theme = "dark"
 			}
+	
+			mosaic := true
+			if mosaicEnv := os.Getenv("KOI_MOSAIC"); mosaicEnv != "" {
+			    mosaic = mosaicEnv != "false"
+			}
 
-			r, _ := glamour.NewTermRenderer(
+			nerd := false
+			if nerdEnv := os.Getenv("KOI_NERD_FONTS"); nerdEnv != "" {
+			    nerd = nerdEnv == "true"
+			}
+
+			badges := true
+			if badgesEnv := os.Getenv("KOI_BADGES"); badgesEnv != "" {
+			    badges = badgesEnv == "true"
+			}
+
+			opts := []glamour.TermRendererOption{
 			    glamour.WithStandardStyle(theme),
-			    glamour.WithMosaic(true),
-			    glamour.WithMosaicWidth(100),
-			    glamour.WithMaxImageHeight(500),
-			    glamour.WithNerdFontIcons(),
-			)
+			    glamour.WithMosaic(mosaic),
+			    glamour.WithShieldsBadges(badges),
+			}
+			if nerd == true {
+				opts = append(opts, glamour.WithNerdFontIcons())
+			}
+
+			r, _ := glamour.NewTermRenderer(opts...)
 
 			render, err := r.Render(string(content))
 			if err != nil {

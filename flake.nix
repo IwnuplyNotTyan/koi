@@ -36,7 +36,7 @@
 	      "-w"
             ];
 
-            vendorHash = "sha256-eq8wtckFoXpwubNpD/RtkylC0Uyg8j40MeOlJELFOs8=";
+            vendorHash = "sha256-BSM+SgTR1/RRgyKq5e7uP9R5KQT6QIiNyNJpZpA/dQ0=";
 
             meta = {
               description = "Basic .md file reader";

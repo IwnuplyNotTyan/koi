@@ -62,14 +62,44 @@
                 Possible values: dark, light, notty, dracula, pink, tokyo-night.
               '';
             };
+
+	    mosaic = lib.mkOption {
+	    	type = lib.types.bool;
+		default = true;
+		description = ''
+		  Enable or disable image render
+		'';
+	    };
+
+	    badges = lib.mkOption {
+	    	type = lib.types.bool;
+		default = true;
+		description = ''
+		  Enable or disable shield io badges
+		'';
+	    };
+
+	    nerd = lib.mkOption {
+	    	type = lib.types.bool;
+		default = false;
+		description = ''
+		  Enable or disable nerd fonts icons for GitHub-Style Callout Blocks
+		'';
+	    };
           };
 
           config = lib.mkIf cfg.enable {
-            home.packages = [ self.packages.${pkgs.system}.default ];
-
-            home.sessionVariables = {
-              KOI_DEFAULT_THEME = cfg.theme;
-            };
+            home.packages = let
+              koiPkg = self.packages.${pkgs.system}.default;
+            in [
+              (pkgs.writeShellScriptBin "koi" ''
+                export KOI_DEFAULT_THEME="${cfg.theme}"
+                export KOI_BADGES="${if cfg.badges then "true" else "false"}"
+                export KOI_NERD_FONTS="${if cfg.nerd then "true" else "false"}"
+                export KOI_MOSAIC="${if cfg.mosaic then "true" else "false"}"
+                exec ${koiPkg}/bin/koi "$@"
+              '')
+            ];
           };
         };
 

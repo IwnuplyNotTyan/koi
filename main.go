@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"charm.land/fang/v2"
-	glamour "github.com/iwnuplynottyan/glamoured"
 	"github.com/charmbracelet/log"
+	glamour "github.com/iwnuplynottyan/glamoured"
 	"github.com/spf13/cobra"
 )
 
@@ -56,28 +56,28 @@ func main() {
 			if theme == "" {
 				theme = "dark"
 			}
-	
+
 			mosaic := true
 			if mosaicEnv := os.Getenv("KOI_MOSAIC"); mosaicEnv != "" {
-			    mosaic = mosaicEnv != "false"
+				mosaic = mosaicEnv != "false"
 			}
 
 			nerd := false
 			if nerdEnv := os.Getenv("KOI_NERD_FONTS"); nerdEnv != "" {
-			    nerd = nerdEnv == "true"
+				nerd = nerdEnv == "true"
 			}
 
 			badges := true
 			if badgesEnv := os.Getenv("KOI_BADGES"); badgesEnv != "" {
-			    badges = badgesEnv == "true"
+				badges = badgesEnv == "true"
 			}
 
 			opts := []glamour.TermRendererOption{
-			    glamour.WithStandardStyle(theme),
-			    glamour.WithMosaic(mosaic),
-			    glamour.WithShieldsBadges(badges),
+				glamour.WithStandardStyle(theme),
+				glamour.WithMosaic(mosaic),
+				glamour.WithShieldsBadges(badges),
 			}
-			if nerd == true {
+			if nerd {
 				opts = append(opts, glamour.WithNerdFontIcons())
 			}
 

@@ -72,6 +72,9 @@ nix run github:iwnuplynottyan/koi
   programs.koi = {
     enable = true;
     theme = "dracula"; # dark | light | notty | dracula | pink | tokyo-night
+    nerd = false;
+    mosaic = true;
+    badges = true;
   };
 }
 ```

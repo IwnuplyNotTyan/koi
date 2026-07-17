@@ -4,8 +4,8 @@ go 1.25.12
 
 require (
 	charm.land/fang/v2 v2.0.1
-	charm.land/glamour/v2 v2.0.1
 	github.com/charmbracelet/log v1.0.0
+	github.com/iwnuplynottyan/glamoured v0.0.0-20260717103049-e95059b93bec
 	github.com/spf13/cobra v1.10.2
 )
 
@@ -31,7 +31,6 @@ require (
 	github.com/go-logfmt/logfmt v0.6.1 // indirect
 	github.com/gorilla/css v1.0.1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/iwnuplynottyan/glamoured v0.0.0-20260712194843-9dbb975cfbe1 // indirect
 	github.com/lucasb-eyer/go-colorful v1.4.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.23 // indirect

@@ -29,9 +29,11 @@ echo "*Markdown suck*" | koi
 
 # ⚙️ Setting
 ```bash
-export KOI_DEFAULT_THEME=dark
+export KOI_DEFAULT_THEME=dark # Or light, notty, pink, tokyo-night, dracula
+export KOI_BADGES=true
+export KOI_NERD_FONTS=false
+export KOI_MOSAIC=true
 ```
-*All default theme: dark, light, notty, pink, tokyo-night or dracula*
 
 ---
 

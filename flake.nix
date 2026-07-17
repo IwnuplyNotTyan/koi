@@ -19,7 +19,7 @@
       packages = forAllSystems (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-	  version = "0.2.0";
+	  version = "0.2.1";
 	  commit = self.rev or "dirty";
         in
         {
@@ -36,7 +36,7 @@
 	      "-w"
             ];
 
-            vendorHash = "sha256-BSM+SgTR1/RRgyKq5e7uP9R5KQT6QIiNyNJpZpA/dQ0=";
+            vendorHash = "sha256-DpGuofxmkcrdi8hYeWM+hBI2XNqNYCTxcmLx69gnAJU=";
 
             meta = {
               description = "Basic .md file reader";

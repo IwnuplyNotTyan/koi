@@ -5,7 +5,7 @@ go 1.25.12
 require (
 	charm.land/fang/v2 v2.0.1
 	github.com/charmbracelet/log v1.0.0
-	github.com/iwnuplynottyan/glamoured v0.0.0-20260717103049-e95059b93bec
+	github.com/iwnuplynottyan/glamoured v0.0.0-20260719193130-e37922939119
 	github.com/spf13/cobra v1.10.2
 )
 

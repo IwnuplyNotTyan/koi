@@ -1,5 +1,5 @@
 pkgname=koi
-pkgver=1.0.0
+pkgver=2.1.0
 pkgrel=1
 pkgdesc="Simple .md reader ~"
 arch=('x86_64')

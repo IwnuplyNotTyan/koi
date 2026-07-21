@@ -6,7 +6,7 @@
     gomod2nix.url = "github:nix-community/gomod2nix";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, gomod2nix, ... }:
     let
       systems = [
         "x86_64-linux"
@@ -14,29 +14,35 @@
         "aarch64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
+
+      pkgsFor = system: import nixpkgs {
+        inherit system;
+        overlays = [ gomod2nix.overlays.default ];
+      };
     in
     {
       packages = forAllSystems (system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
-	  version = "0.2.1";
-	  commit = self.rev or "dirty";
+          pkgs = pkgsFor system;
+          version = "0.2.1";
+          commit = self.rev or "dirty";
         in
         {
-          default = pkgs.buildGoModule {
+          default = pkgs.buildGoApplication {
             pname = "koi";
-	    inherit version;
+            inherit version;
             src = self;
             modules = ./gomod2nix.toml;
+            pwd = ./.;
 
-	    ldflags = [
+            env.GOTOOLCHAIN = "local";
+
+            ldflags = [
               "-X main.version=${version}"
               "-X main.commit=${commit}"
-	      "-s"
-	      "-w"
+              "-s"
+              "-w"
             ];
-
-            vendorHash = "sha256-DpGuofxmkcrdi8hYeWM+hBI2XNqNYCTxcmLx69gnAJU=";
 
             meta = {
               description = "Basic .md file reader";

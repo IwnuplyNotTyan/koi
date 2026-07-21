@@ -5,10 +5,6 @@ schema = 3
     version = 'v2.0.1'
     hash = 'sha256-gDGetHyMJIYiAWeUjgyESKwIZyE0HJTGcyrmZLE+h/E='
 
-  [mod.'charm.land/glamour/v2']
-    version = 'v2.0.1'
-    hash = 'sha256-F/wjR3067f+mPKYbU3ISe0OMTHCUpBFiJwTs5HsuQgU='
-
   [mod.'charm.land/lipgloss/v2']
     version = 'v2.0.4'
     hash = 'sha256-KrO8Q1/yQZBTMwysp/cAi5Kdz2/ZODBOr3C5X04zG/M='
@@ -98,8 +94,8 @@ schema = 3
     hash = 'sha256-XWlYH0c8IcxAwQTnIi6WYqq44nOKUylSWxWO/vi+8pE='
 
   [mod.'github.com/iwnuplynottyan/glamoured']
-    version = 'v0.0.0-20260712194843-9dbb975cfbe1'
-    hash = 'sha256-BUFHOM5//uJBGpShZCi1OBrTSFHqaAw4yFwJSdtVr0c='
+    version = 'v0.0.0-20260719193130-e37922939119'
+    hash = 'sha256-m6EtXilcOIIgG2QxX0YBv5Z+u9KR+wTppRlldXyPLhc='
 
   [mod.'github.com/lucasb-eyer/go-colorful']
     version = 'v1.4.0'
